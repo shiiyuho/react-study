@@ -1,24 +1,36 @@
 import React from "react";
 import Button from "../component/TodoButton/TodoButton";
 
-const TodoTitle = ({ task, index, isSelected, handleSelectTask }) => {
+const TodoTitle = ({
+  task,
+  index,
+  handleDeleteTask,
+  handleToggleTaskCompletion,
+}) => {
   const handleRadioChange = () => {
-    handleSelectTask(index);
+    handleToggleTaskCompletion(index);
+  };
+
+  const handleDeleteClick = () => {
+    handleDeleteTask(index);
   };
 
   return (
-    <>
+    <div className="todo-item">
       <input
         type="radio"
-        checked={isSelected}
+        checked={task.completed}
         onChange={handleRadioChange}
-        className="tuika"
+        className="task-radio"
       />
       {task.text}
-      <div className="sakujo">
-        <Button label="削除" className="delete-button" type="button" />
-      </div>
-    </>
+      <Button
+        onClick={handleDeleteClick}
+        label="削除"
+        className="delete-button"
+        type="button"
+      />
+    </div>
   );
 };
 

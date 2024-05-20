@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../TodoButton/TodoButton";
 import { useState } from "react";
 
-//関数「TodoInput」を定義インプットタグと追加ボタンを中に移す　↙（props：コンポーネントの引数）
+//関数「TodoInput」を定義インプットタグと追加ボタンを中に移す
 const TodoInput = ({ handleAddTask }) => {
   const [textValue, setTextValue] = useState("");
 

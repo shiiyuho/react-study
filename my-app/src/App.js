@@ -5,26 +5,34 @@ import TodoContainer from "./component/container/TodoContaier";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [selectedTaskIndex, setSelectedTaskIndex] = useState(null);
 
   const handleAddTask = (taskText) => {
     setTasks([...tasks, { text: taskText, completed: false }]);
   };
 
-  const handleSelectTask = (index) => {
-    setSelectedTaskIndex(index);
+  const handleDeleteTask = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
+  };
+
+  const handleToggleTaskCompletion = (index) => {
+    setTasks(
+      tasks.map((task, i) =>
+        i === index ? { ...task, completed: !task.completed } : task
+      )
+    );
   };
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>TodoApp</h1>
-        <TodoInput handleAddTask={handleAddTask} />
+
         <TodoContainer
           tasks={tasks}
-          selectedTaskIndex={selectedTaskIndex}
-          handleSelectTask={handleSelectTask}
+          handleDeleteTask={handleDeleteTask}
+          handleToggleTaskCompletion={handleToggleTaskCompletion}
         />
+        <TodoInput handleAddTask={handleAddTask} />
       </header>
     </div>
   );

@@ -41,9 +41,12 @@
   align-items: center;
   margin-bottom: 5px;
 }
-.sakujo {
-  margin: auto;
+.delete-button {
+  margin-left: 20px;
 }
-.tuika {
-  margin: auto;
+.add-button {
+  margin-left: 10px;
+}
+.task-radio {
+  margin-right: 10px;
 }

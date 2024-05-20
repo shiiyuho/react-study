@@ -1,8 +1,22 @@
 import React from "react";
 import Button from "../TodoButton/TodoButton";
+import { useState } from "react";
 
 //関数「TodoInput」を定義インプットタグと追加ボタンを中に移す　↙（props：コンポーネントの引数）
-const TodoInput = ({ textValue, handleTextChange, handleAddOption }) => {
+const TodoInput = ({ handleAddTask }) => {
+  const [textValue, setTextValue] = useState("");
+
+  const handleTextChange = (e) => {
+    setTextValue(e.target.value);
+  };
+
+  const handleAddClick = () => {
+    if (textValue.trim() !== "") {
+      handleAddTask(textValue);
+      setTextValue("");
+    }
+  };
+
   return (
     <div>
       <label>
@@ -11,13 +25,12 @@ const TodoInput = ({ textValue, handleTextChange, handleAddOption }) => {
           value={textValue}
           onChange={handleTextChange}
           className="text-input"
-          placeholder="新しいオプションを入力"
+          placeholder="新しいタスクを入力"
         />
       </label>
       <label>
-        {/* ボタンを呼び込み */}
         <Button
-          onClick={handleAddOption}
+          onClick={handleAddClick}
           label="追加ボタン"
           className="add-button"
           type="button"

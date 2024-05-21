@@ -7,10 +7,11 @@ const TodoTitle = ({
   handleDeleteTask,
   handleToggleTaskCompletion,
 }) => {
+  //ラジオボタンの設定
   const handleRadioChange = () => {
     handleToggleTaskCompletion(index);
   };
-
+  //削除ボタン
   const handleDeleteClick = () => {
     handleDeleteTask(index);
   };
@@ -24,6 +25,7 @@ const TodoTitle = ({
         className="task-radio"
       />
       {task.text}
+      {/* 「button」を呼び出し「削除機能」を追加 */}
       <Button
         onClick={handleDeleteClick}
         label="削除"

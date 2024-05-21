@@ -6,6 +6,7 @@ import { useState } from "react";
 const TodoInput = ({ handleAddTask }) => {
   const [textValue, setTextValue] = useState("");
 
+  //新しい入力値を管理
   const handleTextChange = (e) => {
     setTextValue(e.target.value);
   };

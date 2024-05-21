@@ -12,9 +12,11 @@ const TodoContainer = ({
 
   return (
     <div>
+      {/* 上の項目について */}
       <fieldset className="option-group">
         <legend>未完了のタスク</legend>
         {incompleteTasks.map((task, index) => (
+          // titleを呼びだし
           <TodoTitle
             key={index}
             task={task}

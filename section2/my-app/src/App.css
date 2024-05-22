@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #bcc8de;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,10 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +31,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.submit-button {
+  position: center;
+}
+.text1 {
+  margin: 20px;
+  background-color: rgb(191, 224, 224);
+}
+.text2 {
+  margin: 20px;
+  background-color: rgb(191, 224, 224);
+}
+
+.button {
+  flex: auto;
+  size: 20px;
+}
+
+.title {
+  background-color: rgb(191, 224, 224);
+}
+.submit2 {
+  margin-top: 10px;
+}
+
+.delet {
+  margin-left: 20px;
 }

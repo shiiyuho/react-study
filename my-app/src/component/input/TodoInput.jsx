@@ -2,15 +2,26 @@ import React from "react";
 import Button from "../TodoButton/TodoButton";
 import { useState } from "react";
 
-//関数「TodoInput」を定義インプットタグと追加ボタンを中に移す
+/**
+ * 新しいタスクを追加するための入力コンポーネント。
+ * @component
+ * @param {Object} props - プロパティオブジェクト。
+ * @param {function} props.handleAddTask - 新しいタスクを追加。
+ */
 const TodoInput = ({ handleAddTask }) => {
   const [textValue, setTextValue] = useState("");
 
-  //新しい入力値を管理
+  /**
+   * 入力フィールドの変更を処理します。
+   * @param {Object} e - イベントオブジェクト。
+   */
   const handleTextChange = (e) => {
     setTextValue(e.target.value);
   };
 
+  /**
+   * 追加ボタンのクリックイベントを処理します。
+   */
   const handleAddClick = () => {
     if (textValue.trim() !== "") {
       handleAddTask(textValue);

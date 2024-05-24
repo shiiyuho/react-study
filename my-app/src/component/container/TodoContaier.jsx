@@ -1,7 +1,14 @@
 import React from "react";
 import TodoTitle from "../../title/TodoTitle";
 
-//関数「TodoContaier」を定義しApp.jsで定義したコードを移す
+/**
+ * 未完了と完了したタスクを表示するコンテナコンポーネント。
+ * @component
+ * @param {Object} props - プロパティオブジェクト。
+ * @param {Array} props.tasks - タスクリスト。
+ * @param {function} props.handleDeleteTask - タスクを削除する関数。
+ * @param {function} props.handleToggleTaskCompletion - タスクの完了状態を切り替える関数。
+ */
 const TodoContainer = ({
   tasks,
   handleDeleteTask,

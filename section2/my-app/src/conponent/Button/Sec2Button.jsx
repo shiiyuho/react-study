@@ -1,6 +1,14 @@
 import React from "react";
 
-//関数「Button」を定義しボタン操作の動きを設定
+/**
+ * 汎用ボタンコンポーネント。
+ * @component
+ * @param {Object} props - プロパティオブジェクト。
+ * @param {function} props.onClick - クリック時のハンドラ。
+ * @param {string} props.label - ボタンのラベル。
+ * @param {string} props.className - ボタンのCSSクラス。
+ * @param {string} props.type - ボタンのタイプ。
+ */
 const Button = ({ onClick, label, className, type }) => {
   return (
     <button type={type} onClick={onClick} className={className}>

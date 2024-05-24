@@ -3,6 +3,10 @@ import { useContext } from "react";
 import ReportContext from "./ReportContext";
 import { Link } from "react-router-dom";
 
+/**
+ * 報告書一覧ページのコンポーネント。
+ * @component
+ */
 const ReportList = () => {
   const { reports, deleteReport } = useContext(ReportContext);
 

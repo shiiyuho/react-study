@@ -3,6 +3,10 @@ import { useState, useContext } from "react";
 import ReportContext from "../Router/ReportContext";
 import ReportDetail from "../Router/ReportDetail";
 
+/**
+ * 報告書作成のための入力フォームコンポーネント。
+ * @component
+ */
 const Sec2Input = () => {
   const [reportContent, setReportContent] = useState({
     title: "",
@@ -19,16 +23,28 @@ const Sec2Input = () => {
     setDateValue(event.target.value);
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    return `${year}/${month}/${day} ${hours}:${minutes}`;
+  };
+
   const handleSubmit2 = (event) => {
     event.preventDefault();
+    const formattedDate = formatDate(dateValue);
     const submittedData = {
-      date: dateValue, // 入力された日付を保存
+      date: formattedDate, // フォーマットされた日付を保存
     };
 
     localStorage.setItem("submittedData", JSON.stringify(submittedData)); // データをローカルストレージに保存
     setSubmitted(true); // 提出済みフラグを設定
     console.log("送信されたデータ:", submittedData);
   };
+
   if (submitted) {
     return <ReportDetail />;
   }
@@ -45,10 +61,11 @@ const Sec2Input = () => {
     } else {
       setError("");
     }
+    const formattedDate = formatDate(dateValue);
     const newReport = {
       id: Date.now(),
       ...reportContent,
-      dateinput: dateValue, //日付
+      dateinput: formattedDate, // フォーマットされた日付
     };
     addReport(newReport);
     setReportContent({

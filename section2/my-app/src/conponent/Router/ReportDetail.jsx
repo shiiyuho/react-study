@@ -2,6 +2,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import ReportContext from "./ReportContext";
 import { useContext } from "react";
 
+/**
+ * 報告書詳細ページのコンポーネント。
+ * @component
+ * @param {Object} props - プロパティオブジェクト。
+ * @param {number} props.index - タスクのインデックス。
+ * @param {function} props.handleDeleteTask - タスク削除のハンドラ。
+ */
 const ReportDetail = ({ index, handleDeleteTask }) => {
   const { id } = useParams();
   const { reports, deleteReport } = useContext(ReportContext);

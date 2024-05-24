@@ -1,5 +1,11 @@
 import { useState, createContext } from "react";
 
+/**
+ * 報告書の状態管理を行うコンテキスト。
+ * @component
+ * @param {Object} props - プロパティオブジェクト。
+ * @param {React.ReactNode} props.children - 子要素。
+ */
 const ReportContext = createContext();
 
 export const ReportProvider = ({ children }) => {

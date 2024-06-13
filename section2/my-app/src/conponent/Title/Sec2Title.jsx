@@ -1,3 +1,7 @@
+/**
+ * タイトルと削除ボタンを表示するコンポーネント。
+ * @component
+ */
 const Sec2Title = () => {
   return (
     <label>

@@ -1,8 +1,11 @@
 import React from "react";
 import Sec2Input from "../Input/Sec2Input";
-import Sec2Title from "../Title/Sec2Title";
 import { useState } from "react";
 
+/**
+ * 報告書作成ページのコンポーネント。
+ * @component
+ */
 const ReportCreation = () => {
   const [tasks, setTasks] = useState([]);
 
@@ -12,7 +15,6 @@ const ReportCreation = () => {
   return (
     <div>
       <Sec2Input handleAddTask={handleAddTask} />
-      <Sec2Title />
     </div>
   );
 };

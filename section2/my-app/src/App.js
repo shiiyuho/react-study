@@ -6,6 +6,10 @@ import ReportList from "./conponent/Router/ReportList";
 import { ReportProvider } from "./conponent/Router/ReportContext";
 import ReportDetail from "./conponent/Router/ReportDetail";
 
+/**
+ * 日報管理システムのメインコンポーネント。
+ * @component
+ */
 function App() {
   return (
     <div className="App">
